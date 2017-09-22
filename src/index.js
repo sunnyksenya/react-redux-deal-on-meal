@@ -1,8 +1,18 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import MainScreen from './client/components/main-screen';
+import { Provider } from 'react-redux'
+import createStore from './client';
 import registerServiceWorker from './registerServiceWorker';
+import 'semantic-ui-css/semantic.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore();
+
+ReactDOM.render(
+  <Provider store={store}>
+    <MainScreen />
+  </Provider>,
+  document.getElementById('root'));
+
 registerServiceWorker();

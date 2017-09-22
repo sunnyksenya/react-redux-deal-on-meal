@@ -1,11 +1,11 @@
 export const syncSocketClientWithStore = (socket, store) =>
 {
-  socket.on('action', action => store.dispatch({ ...action, emitterExternal: true }));
+  socket.on('action', action => store.dispatch({ ...action, emmiterExternal: true }));
 };
 
-export const createEmitterMiddleware = socket => store => next => action =>
+export const createEmmiterMiddleware = socket => store => next => action =>
 {
-  if(!action.emitterExternal)
+  if(!action.emmiterExternal)
   {
     socket.emit('action', action);
   }

@@ -1,3 +1,4 @@
+
 require('babel-register')({
   presets: ['env', 'react'],
   plugins: ['transform-object-rest-spread', 'transform-regenerator']
